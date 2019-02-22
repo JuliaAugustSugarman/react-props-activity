@@ -10,6 +10,14 @@ class App extends Component {
   }
 
 
+//input box
+handleAddNumberChange = (propertyName) => (event) => {
+  console.log('Handle input working');
+  
+}
+
+
+  //buttons
   handleAddChange = (event) => {
     console.log('Add Number Handle Clicked');
     
@@ -30,7 +38,7 @@ class App extends Component {
           placeholder="Enter Number"
           type="number"
           // value={this.state.newStar.starDiameter}
-          // onChange={this.handleChangeFor("starDiameter")}
+          onChange={this.handleAddNumberChange}
         />
 
           <button onClick={this.handleSubtractChange}>DOWN</button>
