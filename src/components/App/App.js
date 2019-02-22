@@ -6,44 +6,57 @@ import Header from '../Header/Header';
 
 class App extends Component {
   State = {
-    currentTotal: 0,
+    newNumber: {
+      currentTotal: "0",
+    }
   }
 
+  //input box
+  handleInputChange = (event) => {
+    console.log(event.target.value);
 
-//input box
-handleAddNumberChange = (propertyName) => (event) => {
-  console.log('Handle input working');
-  
-}
+  }//end handleInputChange
 
 
   //buttons
+
   handleAddChange = (event) => {
     console.log('Add Number Handle Clicked');
-    
-  }
+
+  }//handleAddChange
 
   handleSubtractChange = (event) => {
     console.log('Subtract Number Handle Clicked');
-    
-  }
+
+  }//handleSubtractChange
+
+
 
   render() {
     return (
       <div >
         <Header />
-          <button onClick={this.handleAddChange}>UP</button>
+        <button onClick={this.handleAddChange}>UP</button>
 
         <input
           placeholder="Enter Number"
           type="number"
-          // value={this.state.newStar.starDiameter}
-          onChange={this.handleAddNumberChange}
+          // value={this.state.currentTotal}
+          onChange={this.handleInputChange}
         />
 
-          <button onClick={this.handleSubtractChange}>DOWN</button>
+        <button onClick={this.handleSubtractChange}>DOWN</button>
+
+        <div>
+
+          Current Total: {this.state.currentTotal}
+
+        </div>
+
       </div>
-     
+
+
+
     );
   }
 }//end class component
